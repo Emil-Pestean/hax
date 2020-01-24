@@ -2,10 +2,8 @@
 
 ##############################################################
 # This is a script to help with fast install of a new server #
-# things that are installed are:                             #
-# Apache2.4                                                  #
-# Mysql 8                                                    #
-# Redis-server                                               #
+# This will install: nginx, apache2, mysql, redis-server     #
+# Made by: CyberRat                                          #
 ##############################################################
 
 
@@ -44,4 +42,21 @@ echo $VERSION_ID
 
 if [ $NAME == "Ubuntu" ]; then
 	echo $NAME
+	# Install nginx, apache2, mysql, redis-server
+	sudo apt install -y nginx apache2 redis-server mariadb-server
+	
+	# Start MYSQL
+	sudo service mysql start
+
+	# Secure mysql
+	sudo mysql_secure_installation
+
+	# Start apache2
+	sudo service apache2 start
+
+	# Start nginx
+	sudo service nginx start
+
+	# Start redis
+	sudo service redis-server start
 fi
