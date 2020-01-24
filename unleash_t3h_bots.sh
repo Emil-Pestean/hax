@@ -38,10 +38,7 @@ else
 	VER=$(uname -r)
 fi
 
-echo $VERSION_ID
-
 if [ $NAME == "Ubuntu" ]; then
-	echo $NAME
 	# Install nginx, apache2, mysql, redis-server
 	sudo apt install -y nginx apache2 redis-server mariadb-server
 	
