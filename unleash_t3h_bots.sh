@@ -57,3 +57,7 @@ if [ $NAME == "Ubuntu" ]; then
 	# Start redis
 	sudo service redis-server start
 fi
+
+echo "Auto generate nginx VHost setup?"
+read this
+echo $this
